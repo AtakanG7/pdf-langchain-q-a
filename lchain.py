@@ -11,7 +11,7 @@ from langchain.embeddings import OpenAIEmbeddings
 import streamlit as st
 from PyPDF2 import PdfReader
 
-os.environ["SERPAPI_API_KEY"] = "1757bebc765c4c4d7867c3b99adb905e7f78d80d791b119baed0ba87d033d3d3"
+
 os.environ["OPENAI_API_KEY"] = "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"
 
 template =  """ Given the text: "{query}".
