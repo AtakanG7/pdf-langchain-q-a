@@ -12,7 +12,7 @@ import streamlit as st
 from PyPDF2 import PdfReader
 
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 
 template =  """ Given the text: "{query}".
 
