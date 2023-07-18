@@ -12,11 +12,10 @@ import streamlit as st
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 from PyPDF2 import PdfReader
 import pickle
-from dotenv import load_dotenv
 
-load_dotenv()
 
-key = os.getenv("OPENAI_API_KEY") 
+if 'OPENAI_API_KEY' not in st.session_state:
+    st.session_state['OPENAI_API_KEY'] = []
 
 if 'responses' not in st.session_state:
     st.session_state['responses'] = []
@@ -36,6 +35,8 @@ def main():
         st.image("./image/summarify-logo-300.png")
         "contacts"
         st.text("http:/summarify.io")
+        st.session_state.OPENAI_API_KEY = st.text_input("Your Api Key:")
+
         
     pdf = st.file_uploader("Upload your PDF file here", accept_multiple_files=False)
     
@@ -44,7 +45,7 @@ def main():
     0, 10, 1)   
     st.caption("0 recommended")
     
-    llm = ChatOpenAI(temperature=temperature/10,model_name="gpt-3.5-turbo",openai_api_key=key)       
+    llm = ChatOpenAI(temperature=temperature/10,model_name="gpt-3.5-turbo",openai_api_key=st.session_state.OPENAI_API_KEY)       
     
     
     if pdf is not None:
