@@ -1,5 +1,5 @@
 import os
-from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.agents import initialize_agent, AgentType
 from langchain.agents import load_tools
 from langchain.prompts import PromptTemplate
@@ -44,7 +44,7 @@ def main():
     0, 10, 1)   
     st.caption("0 recommended")
     
-    llm = OpenAI(temperature=temperature/10,model_name="gpt-3.5-turbo",openai_api_key=key)       
+    llm = ChatOpenAI(temperature=temperature/10,model_name="gpt-3.5-turbo",openai_api_key=key)       
     
     
     if pdf is not None:
