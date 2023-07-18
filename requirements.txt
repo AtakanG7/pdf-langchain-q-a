@@ -2,3 +2,5 @@ streamlit
 langchain
 PyPDF2
 openai
+InstructorEmbedding
+dotenv
