@@ -3,4 +3,4 @@ langchain
 PyPDF2
 openai
 InstructorEmbedding
-dotenv
+dotenvpython-dotenv
